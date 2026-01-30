@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Lakeside Consulting — Hero</title>
+  <meta name="description" content="Decision and project support for leaders in industrial, chemical, and capital-intensive industries." />
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" sizes="96x96" href="assets/favicons/favicon-96x96.png">
+  <link rel="icon" type="image/svg+xml" href="assets/favicons/favicon.svg">
+  <link rel="shortcut icon" href="assets/favicons/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png">
+  <link rel="manifest" href="assets/favicons/site.webmanifest">
+
+  <style>
+    :root{
+      /* Green palette (tweak to match your brand) */
+      --bg0: #041a14;      /* deep green-black */
+      --bg1: #063024;      /* deep green */
+      --bg2: #0a3e2e;      /* mid green */
+      --accent: #2ea36f;   /* button/links */
+      --accent2:#1f7f57;   /* hover */
+      --line: rgba(255,255,255,.14);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.70);
+      --muted2: rgba(255,255,255,.55);
+      --card: rgba(0,0,0,.28);
+
+      --radius: 18px;
+      --shadow: 0 20px 60px rgba(0,0,0,.45);
+      --maxw: 1180px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      color:var(--text);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background: radial-gradient(1200px 600px at 10% 10%, rgba(46,163,111,.18), transparent 60%),
+                  radial-gradient(900px 500px at 80% 20%, rgba(46,163,111,.10), transparent 60%),
+                  linear-gradient(180deg, var(--bg0), #020b08 70%);
+    }
+
+    a{color:inherit}
+    .wrap{
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 28px 20px 44px;
+    }
+
+    .topbar{
+      position: absolute;
+      top: 18px;
+      left: 24px;
+      right: 24px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      z-index: 10;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      text-decoration:none;
+    }
+
+    .nav{
+      display:flex;
+      gap:14px;
+      align-items:center;
+    }
+
+    .nav a{
+      color: rgba(255,255,255,.86);
+      text-decoration:none;
+      padding:8px 10px;
+      border-radius:10px;
+      font-weight:700;
+      background: rgba(0,0,0,.18);
+      border: 1px solid rgba(255,255,255,.12);
+      backdrop-filter: blur(10px);
+    }
+    .nav a:hover{
+      border-color: rgba(46,163,111,.45);
+    }
+
+    .nav a[aria-current="page"]{
+      color: rgba(255,255,255,.92);
+    }
+
+    /* HERO */
+    .hero{
+      position: relative;
+      border-radius: calc(var(--radius) + 6px);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      background: linear-gradient(120deg, rgba(4,26,20,.96), rgba(4,26,20,.72) 55%, rgba(4,26,20,.30));
+      min-height: 560px;
+    }
+
+    /* Background image on the right */
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+
+      /* TODO: replace background image with licensed or abstract asset before launch */
+      background-image:
+        linear-gradient(90deg, rgba(4,26,20,.98) 0%, rgba(4,26,20,.80) 45%, rgba(4,26,20,.35) 68%, rgba(4,26,20,.10) 100%),
+        url("assets/istockphoto-520877538-1024x1024.jpg"); /* <-- replace with your image */
+      background-size: cover;
+      background-position: center right;
+      filter: saturate(0.95) contrast(1.05);
+      z-index:0;
+    }
+
+    /* subtle film grain */
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.12'/%3E%3C/svg%3E");
+      mix-blend-mode: overlay;
+      opacity: .35;
+      z-index:0;
+      pointer-events:none;
+    }
+
+    .hero-inner{
+      position:relative;
+      z-index:1;
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 28px;
+      padding: 104px 34px 30px; /* was 30px 34px */
+      min-height: 560px;
+    }
+
+    /* Left content */
+    .brand-row{
+      display:flex;
+      align-items:center;
+      gap:16px;
+      margin-bottom: 14px;
+    }
+
+    .logo{
+      width: 72px;
+      height: 72px;
+      flex: 0 0 auto;
+      object-fit: contain;
+      filter: drop-shadow(0 10px 20px rgba(0,0,0,.35));
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      font-size: 14px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .eyebrow .dot{
+      width:8px;height:8px;border-radius:999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 6px rgba(46,163,111,.12);
+    }
+
+    h1{
+      margin: 10px 0 14px;
+      font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+      font-weight: 600;
+      letter-spacing: -.02em;
+      line-height: 1.03;
+      font-size: clamp(38px, 4.2vw, 56px);
+      max-width: 18ch;
+      text-shadow: 0 10px 26px rgba(0,0,0,.35);
+    }
+
+    .subhead{
+      margin: 0 0 18px;
+      font-size: 18px;
+      line-height: 1.55;
+      color: var(--muted);
+      max-width: 58ch;
+    }
+
+    .cred{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 10px 14px;
+      padding: 12px 0 16px;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      margin: 14px 0 18px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .cred b{ color: rgba(255,255,255,.88); font-weight: 650; }
+    .cred .sep{opacity:.35}
+
+    .bullets{
+      display:grid;
+      gap: 12px;
+      margin: 18px 0 22px;
+      padding:0;
+      list-style:none;
+      max-width: 62ch;
+    }
+
+    .bullets li{
+      display:flex;
+      gap: 12px;
+      align-items:flex-start;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+
+    .check{
+      width: 22px;
+      height: 22px;
+      border-radius: 7px;
+      background: rgba(46,163,111,.14);
+      border: 1px solid rgba(46,163,111,.35);
+      display:grid;
+      place-items:center;
+      flex: 0 0 auto;
+      margin-top: 2px;
+    }
+
+    .check svg{ width: 14px; height: 14px; fill: none; stroke: rgba(255,255,255,.88); stroke-width: 2.5; }
+
+    .bullets strong{
+      color: rgba(255,255,255,.92);
+      font-weight: 700;
+    }
+
+    .bullets em{
+      font-style: italic;
+      color: var(--muted2);
+    }
+
+    .cta-row{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items:center;
+      margin-top: 8px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding: 12px 16px;
+      border-radius: 12px;
+      text-decoration:none;
+      font-weight: 700;
+      letter-spacing: .01em;
+      border: 1px solid transparent;
+      transition: transform .12s ease, background .12s ease, border-color .12s ease, opacity .12s ease;
+      user-select:none;
+      white-space: nowrap;
+    }
+
+    .btn-primary{
+      background: linear-gradient(180deg, var(--accent), #1b6f50);
+      color: rgba(255,255,255,.95);
+      box-shadow: 0 10px 30px rgba(46,163,111,.22);
+    }
+    .btn-primary:hover{ background: linear-gradient(180deg, var(--accent2), #155a40); transform: translateY(-1px); }
+
+    .btn-secondary{
+      background: rgba(0,0,0,.18);
+      border-color: rgba(255,255,255,.18);
+      color: rgba(255,255,255,.88);
+      backdrop-filter: blur(10px);
+    }
+    .btn-secondary:hover{ border-color: rgba(46,163,111,.45); transform: translateY(-1px); }
+
+    .qualifier{
+      margin: 12px 0 0;
+      font-size: 13px;
+      color: rgba(255,255,255,.55);
+    }
+
+    /* Right side: optional callout card */
+    .right{
+      display:flex;
+      align-items:flex-end;
+      justify-content:flex-end;
+      padding: 12px 0;
+    }
+
+    .callout{
+      width: min(420px, 100%);
+      background: rgba(0,0,0,.28);
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: var(--radius);
+      padding: 18px 18px 16px;
+      backdrop-filter: blur(14px);
+    }
+
+    .callout p{
+      margin:0;
+      font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+      font-size: 26px;
+      line-height: 1.12;
+      color: rgba(255,255,255,.92);
+      letter-spacing: -.01em;
+    }
+
+    .logos{
+      display:flex;
+      gap: 18px;
+      align-items:center;
+      margin-top: 12px;
+      opacity: .65;
+      filter: grayscale(1);
+    }
+
+    .logo-pill{
+      font-weight: 700;
+      letter-spacing: .02em;
+      font-size: 14px;
+      padding: 6px 10px;
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 999px;
+      background: rgba(255,255,255,.06);
+    }
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .hero-inner{
+        grid-template-columns: 1fr;
+        padding: 84px 34px 30px;
+      }
+      .right{
+        justify-content:flex-start;
+        align-items:flex-start;
+      }
+      .logo{ width: 92px; height: 92px; }
+      h1{ max-width: 22ch; }
+      .hero{ min-height: 0; }
+      .hero-inner{ min-height: 0; }
+      .callout p{ font-size: 22px; }
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      .btn{ transition:none; }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="wrap">
+    <section class="hero" aria-label="Lakeside Consulting hero">
+      <div class="hero-inner">
+        <!-- LEFT -->
+        <div>
+          <header class="topbar">
+            <a class="brand" href="/">
+              <img class="logo" src="assets/lakeside-logo.png" alt="Lakeside logo" />
+            </a>
+
+            <nav class="nav" aria-label="Primary navigation">
+              <a href="/" aria-current="page">Home</a>
+              <a href="/articles">Articles</a>
+            </nav>
+          </header>
+
+          <div class="eyebrow">
+            <span class="dot" aria-hidden="true"></span>
+            <span>Rapid support for leaders in industrial, chemical, and capital-intensive industries</span>
+          </div>
+
+          <h1>Make the decision you won’t regret after the money is spent.</h1>
+
+          <p class="subhead">
+            Capital, site, and acquisition choices get expensive fast—and they’re hard to unwind.
+            I help teams surface the assumptions and second-order effects that quietly cost millions
+            before they’re locked in.
+          </p>
+
+          <div class="cred" role="list" aria-label="Credibility metrics">
+            <span role="listitem"><b>$300M+</b> capital projects</span>
+            <span class="sep" aria-hidden="true">•</span>
+            <span role="listitem"><b>$1.5B</b> integrations</span>
+            <span class="sep" aria-hidden="true">•</span>
+            <span role="listitem"><b>12+</b> industrial sectors</span>
+          </div>
+
+          <ul class="bullets">
+            <li>
+              <span class="check" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+              </span>
+              <span><strong>Get to the real decision</strong> <em>(what must be decided now vs later)</em></span>
+            </li>
+            <li>
+              <span class="check" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+              </span>
+              <span><strong>Stress-test the downside</strong> <em>(capex exposure, constraints, competitor response)</em></span>
+            </li>
+            <li>
+              <span class="check" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+              </span>
+              <span><strong>Execute the plan with confidence</strong> <em>(build/buy/partner, timing, priorities)</em></span>
+            </li>
+          </ul>
+
+          <div class="cta-row">
+            <!-- Replace hrefs with your real links -->
+            <a
+              class="btn btn-primary"
+              href="https://calendly.com/lakesideconsult-ing"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Schedule a brief discussion
+            </a>
+            <a class="btn btn-secondary" href="#decisions">See the types of decisions I support</a>
+          </div>
+
+          <p class="qualifier">
+            Not for branding exercises, generic decks, or theoretical strategy.
+          </p>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="right">
+          <div class="callout" aria-label="Hero callout">
+            <p>High-stakes decisions,<br/>real-world impact.</p>
+            <div class="logos" aria-label="Publication placeholders">
+              <span class="logo-pill">LinkedIn</span>
+              <span class="logo-pill">Medium</span>
+              <span class="logo-pill">Chemical Week</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Optional: add sections to make the anchor links work -->
+  <div id="decisions" style="height:24px"></div>
+  <div id="contact" style="height:24px"></div>
+</body>
+</html>

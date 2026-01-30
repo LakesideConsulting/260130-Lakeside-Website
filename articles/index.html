@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Articles — Lakeside Consulting</title>
+  <meta name="description" content="Articles and perspectives from Lakeside Consulting." />
+
+  <style>
+    :root{
+      --bg0:#041a14; --bg1:#063024; --bg2:#0a3e2e;
+      --accent:#2ea36f; --accent2:#1f7f57;
+      --text:rgba(255,255,255,.92);
+      --muted:rgba(255,255,255,.70);
+      --muted2:rgba(255,255,255,.55);
+      --line:rgba(255,255,255,.14);
+      --card:rgba(0,0,0,.28);
+      --radius:18px;
+      --shadow:0 20px 60px rgba(0,0,0,.45);
+      --maxw:1050px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      color:var(--text);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background: radial-gradient(1200px 600px at 10% 10%, rgba(46,163,111,.16), transparent 60%),
+                  linear-gradient(180deg, var(--bg0), #020b08 70%);
+    }
+    a{color:inherit}
+    .wrap{max-width:var(--maxw); margin:0 auto; padding:26px 18px 56px;}
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:16px; padding:12px 0 18px; border-bottom:1px solid var(--line);
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px; text-decoration:none;
+    }
+    .brand img{width:46px; height:46px; object-fit:contain}
+    .brand strong{letter-spacing:.01em}
+    .nav{display:flex; gap:14px; align-items:center; color:var(--muted)}
+    .nav a{color:var(--muted); text-decoration:none; padding:8px 10px; border-radius:10px}
+    .nav a:hover{background:rgba(255,255,255,.06); color:rgba(255,255,255,.88)}
+    h1{
+      margin:22px 0 10px;
+      font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+      font-weight:600;
+      letter-spacing:-.02em;
+      font-size: clamp(34px, 4vw, 46px);
+    }
+    .subhead{margin:0 0 22px; color:var(--muted); line-height:1.55; max-width:70ch;}
+    .grid{display:grid; gap:14px;}
+    .card{
+      display:grid;
+      grid-template-columns: 180px 1fr;
+      gap: 16px;
+      padding: 14px;
+      border-radius: var(--radius);
+      background: rgba(0,0,0,.26);
+      border: 1px solid rgba(255,255,255,.12);
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+      text-decoration:none;
+      transition: transform .12s ease, border-color .12s ease, background .12s ease;
+      overflow:hidden;
+    }
+    .card:hover{
+      transform: translateY(-1px);
+      border-color: rgba(46,163,111,.35);
+      background: rgba(0,0,0,.30);
+    }
+    .thumb{
+      width:100%;
+      height:120px;
+      border-radius: 14px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.10);
+      overflow:hidden;
+    }
+    .thumb img{width:100%; height:100%; object-fit:cover; display:block;}
+    .meta{padding-top:2px}
+    .title{
+      margin:0 0 6px;
+      font-weight: 750;
+      letter-spacing: -.01em;
+      line-height: 1.25;
+      font-size: 18px;
+    }
+    .excerpt{margin:0; color:var(--muted); line-height:1.5;}
+    .out{
+      margin-top:10px;
+      display:inline-flex; gap:8px; align-items:center;
+      color: rgba(255,255,255,.86);
+      font-weight: 700;
+    }
+    .out span{color: rgba(46,163,111,.95)}
+    .footer{
+      margin-top:26px;
+      padding-top:18px;
+      border-top:1px solid var(--line);
+      color: var(--muted2);
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px 18px;
+      align-items:center;
+      justify-content:space-between;
+    }
+    .footer a{color:var(--muted2)}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:10px 14px; border-radius:12px;
+      text-decoration:none; font-weight:800;
+      background: linear-gradient(180deg, var(--accent), #1b6f50);
+      color: rgba(255,255,255,.95);
+      box-shadow: 0 10px 30px rgba(46,163,111,.18);
+    }
+    .btn:hover{background: linear-gradient(180deg, var(--accent2), #155a40);}
+    @media (max-width: 720px){
+      .card{grid-template-columns: 1fr;}
+      .thumb{height:160px;}
+    }
+  </style>
+</head>
+
+<body>
+  <main class="wrap">
+    <header class="topbar">
+      <a class="brand" href="/">
+        <img src="/assets/lakeside-logo.png" alt="Lakeside logo">
+        <strong>Lakeside Consulting</strong>
+      </a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="/">Home</a>
+        <a href="/articles" aria-current="page">Articles</a>
+      </nav>
+    </header>
+
+    <h1>Articles</h1>
+    <p class="subhead">
+      Short perspectives on capital decisions, strategy under uncertainty, and practical lessons from complex work.
+    </p>
+
+    <section class="grid" aria-label="Articles list">
+      <a class="card" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
+        <div class="thumb">
+          <img src="/articles/assets/depreciation.jpg" alt="Industrial facility image for depreciation article">
+        </div>
+        <div class="meta">
+          <h2 class="title">Taking Advantage of 100% Depreciation in 2026 — Why Chemical Manufacturers Can’t Afford First-Time Mistakes</h2>
+          <p class="excerpt">Early design choices create permanent margin advantages. Missteps create permanent disadvantages.</p>
+          <div class="out"><span>→</span> Read on LinkedIn</div>
+        </div>
+      </a>
+
+      <a class="card" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
+        <div class="thumb">
+          <img src="/articles/assets/statistics.jpg" alt="Abstract chart image for statistics article">
+        </div>
+        <div class="meta">
+          <h2 class="title">The Statistics We Rely On Are Getting Noisier</h2>
+          <p class="excerpt">We are used to data getting better over time. We are not used to data getting less reliable.</p>
+          <div class="out"><span>→</span> Read on LinkedIn</div>
+        </div>
+      </a>
+
+      <a class="card" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
+        <div class="thumb">
+          <img src="/articles/assets/oil.jpg" alt="Industrial pipes image for oil prices article">
+        </div>
+        <div class="meta">
+          <h2 class="title">Falling Oil Prices and Specialty Chemicals</h2>
+          <p class="excerpt">The big news in commodity chemicals is the effect that falling oil prices are having on prices and margins.</p>
+          <div class="out"><span>→</span> Read on LinkedIn</div>
+        </div>
+      </a>
+    </section>
+
+    <footer class="footer">
+      <div>Charlotte, NC / Eatonton, GA • <a href="mailto:info@lakesideconsult.ing">info@lakesideconsult.ing</a></div>
+      <a class="btn" href="https://calendly.com/lakesideconsult-ing" target="_blank" rel="noopener noreferrer">Schedule a brief discussion</a>
+    </footer>
+  </main>
+</body>
+</html>

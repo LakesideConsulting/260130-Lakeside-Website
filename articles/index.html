@@ -6,6 +6,14 @@
   <title>Articles — Lakeside Consulting</title>
   <meta name="description" content="Articles and perspectives from Lakeside Consulting." />
 
+
+<!-- Favicons -->
+<link rel="icon" type="image/png" sizes="96x96" href="../assets/favicons/favicon-96x96.png">
+<link rel="icon" type="image/svg+xml" href="../assets/favicons/favicon.svg">
+<link rel="shortcut icon" href="../assets/favicons/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="../assets/favicons/apple-touch-icon.png">
+<link rel="manifest" href="../assets/favicons/site.webmanifest">
+
   <style>
     :root{
       --bg0:#041a14; --bg1:#063024; --bg2:#0a3e2e;
@@ -30,17 +38,72 @@
     a{color:inherit}
     .wrap{max-width:var(--maxw); margin:0 auto; padding:26px 18px 56px;}
     .topbar{
-      display:flex; align-items:center; justify-content:space-between;
-      gap:16px; padding:12px 0 18px; border-bottom:1px solid var(--line);
-    }
-    .brand{
-      display:flex; align-items:center; gap:12px; text-decoration:none;
-    }
-    .brand img{width:46px; height:46px; object-fit:contain}
-    .brand strong{letter-spacing:.01em}
-    .nav{display:flex; gap:14px; align-items:center; color:var(--muted)}
-    .nav a{color:var(--muted); text-decoration:none; padding:8px 10px; border-radius:10px}
-    .nav a:hover{background:rgba(255,255,255,.06); color:rgba(255,255,255,.88)}
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  padding: 10px 0 18px;
+  border-bottom:1px solid var(--line);
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  text-decoration:none;
+}
+
+.brand .logo{
+  width:72px;
+  height:72px;
+  object-fit:contain;
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,.35));
+}
+
+/* Top-right nav buttons (match home) */
+.nav{
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+
+.nav a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  height: 36px;
+  padding: 0 14px;
+
+  border-radius: 12px;
+  text-decoration:none;
+  font-weight: 800;
+  font-size: 14px;
+  letter-spacing: .01em;
+
+  color: rgba(255,255,255,.86);
+  background: rgba(0,0,0,.18);
+  border: 1px solid rgba(255,255,255,.14);
+  backdrop-filter: blur(12px);
+
+  transition: transform .12s ease, border-color .12s ease, background .12s ease, color .12s ease;
+}
+
+.nav a:hover{
+  transform: translateY(-1px);
+  border-color: rgba(46,163,111,.45);
+  background: rgba(0,0,0,.24);
+  color: rgba(255,255,255,.92);
+}
+
+.nav a[aria-current="page"]{
+  color: rgba(255,255,255,.96);
+  border-color: rgba(46,163,111,.55);
+  background: linear-gradient(180deg, rgba(46,163,111,.28), rgba(27,111,80,.18));
+}
+
+@media (max-width: 720px){
+  .brand .logo{ width:60px; height:60px; }
+  .nav a{ height:34px; padding:0 12px; font-size:13px; }
+}
     h1{
       margin:22px 0 10px;
       font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
@@ -123,16 +186,16 @@
 
 <body>
   <main class="wrap">
-    <header class="topbar">
-      <a class="brand" href="/">
-        <img src="/assets/lakeside-logo.png" alt="Lakeside logo">
-        <strong>Lakeside Consulting</strong>
-      </a>
-      <nav class="nav" aria-label="Primary navigation">
-        <a href="/">Home</a>
-        <a href="/articles" aria-current="page">Articles</a>
-      </nav>
-    </header>
+    
+<header class="topbar">
+  <a class="brand" href="../index.html" aria-label="Lakeside Consulting home">
+    <img class="logo" src="../assets/lakeside-logo.png" alt="Lakeside logo">
+  </a>
+  <nav class="nav" aria-label="Primary navigation">
+    <a href="../index.html">Home</a>
+    <a href="index.html" aria-current="page">Articles</a>
+  </nav>
+</header>
 
     <h1>Articles</h1>
     <p class="subhead">
@@ -140,9 +203,9 @@
     </p>
 
     <section class="grid" aria-label="Articles list">
-      <a class="card" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
+      <a class="card" href="https://www.linkedin.com/pulse/taking-advantage-100-depreciation-2026-why-chemical-cant-ron-levin-dvzde/" target="_blank" rel="noopener noreferrer">
         <div class="thumb">
-          <img src="/articles/assets/depreciation.jpg" alt="Industrial facility image for depreciation article">
+          <img src="assets/depreciation.jpg" alt="Industrial facility image for depreciation article">
         </div>
         <div class="meta">
           <h2 class="title">Taking Advantage of 100% Depreciation in 2026 — Why Chemical Manufacturers Can’t Afford First-Time Mistakes</h2>
@@ -151,9 +214,9 @@
         </div>
       </a>
 
-      <a class="card" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
+      <a class="card" href="https://www.linkedin.com/pulse/statistics-we-rely-getting-noisier-ron-levin-ujsge/" target="_blank" rel="noopener noreferrer">
         <div class="thumb">
-          <img src="/articles/assets/statistics.jpg" alt="Abstract chart image for statistics article">
+          <img src="assets/statistics.png" alt="Abstract chart image for statistics article">
         </div>
         <div class="meta">
           <h2 class="title">The Statistics We Rely On Are Getting Noisier</h2>
@@ -162,9 +225,9 @@
         </div>
       </a>
 
-      <a class="card" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
+      <a class="card" href="https://www.linkedin.com/pulse/falling-oil-prices-specialty-chemicals-ron-levin/" target="_blank" rel="noopener noreferrer">
         <div class="thumb">
-          <img src="/articles/assets/oil.jpg" alt="Industrial pipes image for oil prices article">
+          <img src="assets/oil.jpg" alt="Industrial pipes image for oil prices article">
         </div>
         <div class="meta">
           <h2 class="title">Falling Oil Prices and Specialty Chemicals</h2>

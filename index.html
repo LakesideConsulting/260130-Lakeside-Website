@@ -178,6 +178,27 @@
       filter: drop-shadow(0 10px 20px rgba(0,0,0,.35));
     }
 
+
+    /* Variant 1 identity block */
+    .hero-id{
+      margin-top: 6px;
+      margin-bottom: 8px;
+    }
+    .hero-name{
+      font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+      font-weight: 600;
+      font-size: 22px;
+      letter-spacing: -.01em;
+      color: rgba(255,255,255,.92);
+      text-shadow: 0 10px 26px rgba(0,0,0,.25);
+    }
+    .hero-tagline{
+      margin-top: 4px;
+      font-size: 15px;
+      line-height: 1.35;
+      color: var(--muted);
+    }
+
     .eyebrow{
       display:inline-flex;
       align-items:center;
@@ -566,8 +587,12 @@ h1{ max-width: 22ch; }
 
         <!-- LEFT -->
         <div class="left">
-<div class="eyebrow">
-            <span class="dot" aria-hidden="true"></span>
+<div class="hero-id">
+            <div class="hero-name">Lakeside Consulting</div>
+            <div class="hero-tagline">Capital &amp; strategic decision support for industrial leaders</div>
+          </div>
+
+          <div class="eyebrow">
             <span>Rapid support for leaders in industrial, chemical, and capital-intensive industries</span>
           </div>
 

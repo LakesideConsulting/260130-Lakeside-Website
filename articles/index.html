@@ -46,6 +46,33 @@
   border-bottom:1px solid var(--line);
 }
 
+  .page-hero{
+    margin: 18px 0 28px;
+  }
+
+  .brand-title{
+    margin: 8px 0 2px;
+    font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+    font-weight: 600;
+    letter-spacing: -.015em;
+    font-size: clamp(22px, 2.2vw, 28px);
+  }
+
+  .brand-tagline{
+    margin: 0 0 16px;
+    color: var(--muted);
+    font-size: 15px;
+    max-width: 70ch;
+  }
+
+.page-title{
+  margin: 14px 0 6px;
+  font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  font-weight: 600;
+  letter-spacing: -.02em;
+  font-size: clamp(30px, 3.6vw, 44px);
+}
+
 .brand{
   display:flex;
   align-items:center;
@@ -197,10 +224,17 @@
   </nav>
 </header>
 
-    <h1>Articles</h1>
-    <p class="subhead">
-      Short perspectives on capital decisions, strategy under uncertainty, and practical lessons from complex work.
-    </p>
+    <section class="page-hero">
+      <h1 class="brand-title">Lakeside Consulting</h1>
+      <p class="brand-tagline">
+        Capital &amp; strategic decision support for industrial leaders
+      </p>
+
+      <h2 class="page-title">Articles</h2>
+      <p class="subhead">
+        Short perspectives on capital decisions, strategy under uncertainty, and practical lessons from complex work.
+      </p>
+    </section>
 
     <section class="grid" aria-label="Articles list">
 

@@ -589,6 +589,15 @@ h1{ max-width: 22ch; }
     gtag('js', new Date());
 
     gtag('config', 'G-51LNCTGDYJ');
+
+  <script>
+    function trackEvent(eventName, params = {}) {
+      if (typeof gtag === 'function') {
+        gtag('event', eventName, params);
+      }
+    }
+  </script>
+
   </script>  
   
 </head>
@@ -605,7 +614,16 @@ h1{ max-width: 22ch; }
 
             <nav class="nav" aria-label="Primary navigation">
               <a href="index.html" aria-current="page">Home</a>
-              <a href="articles/index.html">Articles</a>
+              <a
+                href="articles/index.html"
+                onclick="trackEvent('select_content', {
+                  content_type: 'navigation',
+                  item_name: 'Articles'
+                })"
+              >
+                Articles
+              </a>
+
             </nav>
           </header>
 
@@ -661,9 +679,16 @@ h1{ max-width: 22ch; }
               href="https://calendly.com/lakesideconsult-ing"
               target="_blank"
               rel="noopener noreferrer"
+              onclick="trackEvent('purchase', {
+                currency: 'USD',
+                value: 1,
+                item_name: 'Brief Discussion',
+                item_category: 'Consulting Lead'
+              })"
             >
               Schedule a brief discussion
             </a>
+
             <a class="btn btn-secondary" href="#decisions">See the types of decisions I support</a>
           </div>
 
@@ -772,11 +797,36 @@ h1{ max-width: 22ch; }
     <section class="cta-band" aria-label="Call to action">
       <div class="copy">
         <p><strong style="color:rgba(255,255,255,.95); font-weight:900;">If you’re facing a decision where the downside matters as much as the upside, we should talk.</strong></p>
-        <small>Charlotte, NC / Eatonton, GA • <a href="mailto:info@lakesideconsult.ing">info@lakesideconsult.ing</a></small>
+        <small>
+          Charlotte, NC / Eatonton, GA •
+          <a
+            href="mailto:info@lakesideconsult.ing"
+            onclick="trackEvent('generate_lead', {
+              method: 'email',
+              link_text: 'info@lakesideconsult.ing'
+            })"
+          >
+            info@lakesideconsult.ing
+          </a>
+        </small>
         <small> </a></small>
         <small> </a></small>
       </div>
-      <a class="btn btn-primary" href="https://calendly.com/lakesideconsult-ing" target="_blank" rel="noopener noreferrer">Schedule a brief discussion</a>
+        <a
+          class="btn btn-primary"
+          href="https://calendly.com/lakesideconsult-ing"
+          target="_blank"
+          rel="noopener noreferrer"
+          onclick="trackEvent('purchase', {
+            currency: 'USD',
+            value: 1,
+            item_name: 'Brief Discussion',
+            item_category: 'Consulting Lead'
+          })"
+        >
+          Schedule a brief discussion
+        </a>
+
     </section>
 
     <footer class="footer" aria-label="Site footer">

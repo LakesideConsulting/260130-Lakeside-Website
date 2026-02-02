@@ -209,6 +209,22 @@
       .thumb{height:160px;}
     }
   </style>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-51LNCTGDYJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-51LNCTGDYJ');
+
+    function trackEvent(eventName, params = {}) {
+      if (typeof gtag === 'function') {
+        gtag('event', eventName, params);
+      }
+    }
+  </script>
+
 </head>
 
 <body>
@@ -219,7 +235,15 @@
     <img class="logo" src="../assets/lakeside-logo.png" alt="Lakeside logo">
   </a>
   <nav class="nav" aria-label="Primary navigation">
-    <a href="../index.html">Home</a>
+    <a
+      href="../index.html"
+      onclick="trackEvent('select_content', {
+        content_type: 'navigation',
+        item_name: 'Home'
+      })"
+    >
+      Home
+    </a>
     <a href="index.html" aria-current="page">Articles</a>
   </nav>
 </header>
@@ -238,9 +262,20 @@
 
     <section class="grid" aria-label="Articles list">
 
-      <a class="card" href="https://www.linkedin.com/pulse/successful-capital-projects-cant-afford-learning-we-go-ron-levin-pb1be/" target="_blank" rel="noopener noreferrer">
+      <a
+        class="card"
+        href="https://www.linkedin.com/pulse/successful-capital-projects-cant-afford-learning-we-go-ron-levin-pb1be/"
+        target="_blank"
+        rel="noopener noreferrer"
+        onclick="trackEvent('select_content', {
+          content_type: 'article',
+          item_name: 'Successful Capital Projects Can’t Afford Learning as We Go',
+          destination: 'linkedin',
+          source_page: 'articles'
+        })"
+      >
         <div class="thumb">
-          <img src="../assets/experience.jpg" alt="Art for Article on Experience”">
+          <img src="../assets/experience.jpg" alt="Art for Article on Experience">
         </div>
         <div class="meta">
           <h2 class="title">Successful Capital Projects Can’t Afford “Learning as We Go”</h2>
@@ -249,7 +284,18 @@
         </div>
       </a>
 
-      <a class="card" href="https://www.linkedin.com/pulse/taking-advantage-100-depreciation-2026-why-chemical-cant-ron-levin-dvzde/" target="_blank" rel="noopener noreferrer">
+      <a
+        class="card"
+        href="https://www.linkedin.com/pulse/taking-advantage-100-depreciation-2026-why-chemical-cant-ron-levin-dvzde/"
+        target="_blank"
+        rel="noopener noreferrer"
+        onclick="trackEvent('select_content', {
+          content_type: 'article',
+          item_name: 'Taking Advantage of 100% Depreciation in 2026',
+          destination: 'linkedin',
+          source_page: 'articles'
+        })"
+      >
         <div class="thumb">
           <img src="../assets/depreciation.jpg" alt="Industrial facility image for depreciation article">
         </div>
@@ -260,7 +306,18 @@
         </div>
       </a>
 
-      <a class="card" href="https://www.linkedin.com/pulse/statistics-we-rely-getting-noisier-ron-levin-ujsge/" target="_blank" rel="noopener noreferrer">
+      <a
+        class="card"
+        href="https://www.linkedin.com/pulse/statistics-we-rely-getting-noisier-ron-levin-ujsge/"
+        target="_blank"
+        rel="noopener noreferrer"
+        onclick="trackEvent('select_content', {
+          content_type: 'article',
+          item_name: 'The Statistics We Rely On Are Getting Noisier',
+          destination: 'linkedin',
+          source_page: 'articles'
+        })"
+      >
         <div class="thumb">
           <img src="../assets/statistics.png" alt="Abstract chart image for statistics article">
         </div>
@@ -271,7 +328,18 @@
         </div>
       </a>
 
-      <a class="card" href="https://www.linkedin.com/pulse/falling-oil-prices-specialty-chemicals-ron-levin/" target="_blank" rel="noopener noreferrer">
+      <a
+        class="card"
+        href="https://www.linkedin.com/pulse/falling-oil-prices-specialty-chemicals-ron-levin/"
+        target="_blank"
+        rel="noopener noreferrer"
+        onclick="trackEvent('select_content', {
+          content_type: 'article',
+          item_name: 'Falling Oil Prices and Specialty Chemicals',
+          destination: 'linkedin',
+          source_page: 'articles'
+        })"
+      >
         <div class="thumb">
           <img src="../assets/oil.jpg" alt="Industrial pipes image for oil prices article">
         </div>
@@ -284,8 +352,31 @@
     </section>
 
     <footer class="footer">
-      <div>Charlotte, NC / Eatonton, GA • <a href="mailto:info@lakesideconsult.ing">info@lakesideconsult.ing</a></div>
-      <a class="btn" href="https://calendly.com/lakesideconsult-ing" target="_blank" rel="noopener noreferrer">Schedule a brief discussion</a>
+      <div>Charlotte, NC / Eatonton, GA • 
+        <a
+          href="mailto:info@lakesideconsult.ing"
+          onclick="trackEvent('generate_lead', {
+            method: 'email',
+            page: 'articles'
+          })"
+        >
+          info@lakesideconsult.ing
+        </a>
+      </div>
+      <a
+        class="btn"
+        href="https://calendly.com/lakesideconsult-ing"
+        target="_blank"
+        rel="noopener noreferrer"
+        onclick="trackEvent('purchase', {
+          currency: 'USD',
+          value: 1,
+          item_name: 'Brief Discussion',
+          source_page: 'articles'
+        })"
+      >
+        Schedule a brief discussion
+      </a>
     </footer>
   </main>
 </body>

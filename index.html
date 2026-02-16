@@ -1,3 +1,4 @@
+```html
 <!doctype html>
 <html lang="en">
 <head>
@@ -22,7 +23,6 @@
 
   <!-- Optional but helpful -->
   <meta name="apple-mobile-web-app-title" content="Lakeside Consulting" />
-
 
   <style>
     :root{
@@ -52,14 +52,10 @@
 
       --card-shadow: 0 10px 30px rgba(0,0,0,.22);
     }
-        
-    /* =========================
-      Unified Card System
-      ========================= */
-  *{box-sizing:border-box}
-      html,body{
-        min-height:100%
-      }
+
+    *{box-sizing:border-box}
+    html,body{min-height:100%}
+
     body {
       margin: 0;
       color: var(--text);
@@ -93,6 +89,14 @@
       display:flex;
       align-items:center;
       text-decoration:none;
+    }
+
+    .logo{
+      width: 72px;
+      height: 72px;
+      flex: 0 0 auto;
+      object-fit: contain;
+      filter: drop-shadow(0 10px 20px rgba(0,0,0,.35));
     }
 
     /* Top-right nav buttons */
@@ -137,7 +141,6 @@
       background: linear-gradient(180deg, rgba(46,163,111,.28), rgba(27,111,80,.18));
     }
 
-
     /* HERO */
     .hero{
       position: relative;
@@ -153,11 +156,9 @@
       content:"";
       position:absolute;
       inset:0;
-
-      /* TODO: replace background image with licensed or abstract asset before launch */
       background-image:
         linear-gradient(90deg, rgba(4,26,20,.98) 0%, rgba(4,26,20,.80) 45%, rgba(4,26,20,.35) 68%, rgba(4,26,20,.10) 100%),
-        url("assets/hero.jpg"); /* <-- replace with your image */
+        url("assets/hero.jpg");
       background-size: cover;
       background-position: center right;
       filter: saturate(0.95) contrast(1.05);
@@ -186,18 +187,8 @@
       padding: 22px 34px 30px;
       min-height: 560px;
     }
+
     .left{min-width:0;}
-
-    /* Left content */
-
-    .logo{
-      width: 72px;
-      height: 72px;
-      flex: 0 0 auto;
-      object-fit: contain;
-      filter: drop-shadow(0 10px 20px rgba(0,0,0,.35));
-    }
-
 
     /* Variant 1 identity block */
     .hero-id{
@@ -217,22 +208,6 @@
       font-size: 15px;
       line-height: 1.35;
       color: var(--muted);
-    }
-
-    .eyebrow{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      font-size: 14px;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-
-    .eyebrow .dot{
-      width:8px;height:8px;border-radius:999px;
-      background: var(--accent);
-      box-shadow: 0 0 0 6px rgba(46,163,111,.12);
     }
 
     h1{
@@ -349,57 +324,6 @@
     }
     .btn-secondary:hover{ border-color: rgba(46,163,111,.45); transform: translateY(-1px); }
 
-    .qualifier{
-      margin: 12px 0 0;
-      font-size: 13px;
-      color: rgba(255,255,255,.55);
-    }
-
-    /* Right side: optional callout card */
-    .right{
-      display:flex;
-      align-items:flex-end;
-      justify-content:flex-end;
-      padding: 12px 0;
-    }
-
-    .callout{
-      width: min(420px, 100%);
-      background: var(--card-bg-strong);
-      border: 1px solid rgba(255,255,255,.14);
-      border-radius: var(--radius);
-      padding: 18px 18px 16px;
-      backdrop-filter: blur(14px);
-    }
-
-    .callout p{
-      margin:0;
-      font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-      font-size: 26px;
-      line-height: 1.12;
-      color: rgba(255,255,255,.92);
-      letter-spacing: -.01em;
-    }
-
-    .logos{
-      display:flex;
-      gap: 18px;
-      align-items:center;
-      margin-top: 12px;
-      opacity: .65;
-      filter: grayscale(1);
-    }
-
-    .logo-pill{
-      font-weight: 700;
-      letter-spacing: .02em;
-      font-size: 14px;
-      padding: 6px 10px;
-      border: 1px solid rgba(255,255,255,.14);
-      border-radius: 999px;
-      background: rgba(255,255,255,.06);
-    }
-
     /* Responsive */
     @media (max-width: 980px){
       .hero-inner{
@@ -407,14 +331,9 @@
         grid-template-rows: auto 1fr;
         padding: 22px 22px 26px;
       }
-      .right{
-        justify-content:flex-start;
-        align-items:flex-start;
-      }
-h1{ max-width: 22ch; }
+      h1{ max-width: 22ch; }
       .hero{ min-height: 0; }
       .hero-inner{ min-height: 0; }
-      .callout p{ font-size: 22px; }
     }
 
     @media (prefers-reduced-motion: reduce){
@@ -422,41 +341,16 @@ h1{ max-width: 22ch; }
     }
 
     @media (max-width: 700px){
-      .topbar{
-        gap: 10px;
-      }
-      .topbar .logo{
-        width: 60px;
-        height: 60px;
-      }
-
-      .nav a{
-        height: 34px;
-        padding: 0 12px;
-        font-size: 13px;
-        border-radius: 12px;
-      }
-
-      /* Push hero content down more so it can’t collide with the header */
-      .hero-inner{
-        padding: 18px 18px 22px;
-      }
-
-      /* Optional: keep the eyebrow from climbing too high */
-      .eyebrow{
-        margin-top: 6px;
-        font-size: 13px;
-        line-height: 1.25;
-      }
+      .topbar{ gap: 10px; }
+      .logo{ width: 60px; height: 60px; }
+      .nav a{ height: 34px; padding: 0 12px; font-size: 13px; border-radius: 12px; }
+      .hero-inner{ padding: 18px 18px 22px; }
     }
-
 
     /* BELOW-HERO SECTIONS */
     .section{
       margin-top: 18px;
       padding: 24px 26px;
-
-      /* unified card styling */
       border-radius: var(--card-radius);
       border: 1px solid var(--card-border);
       background: var(--card-bg);
@@ -465,7 +359,7 @@ h1{ max-width: 22ch; }
       -webkit-backdrop-filter: blur(10px);
     }
 
-.section + .section{ margin-top: 14px; }
+    .section + .section{ margin-top: 14px; }
 
     .section h2{
       margin: 0 0 12px;
@@ -507,7 +401,6 @@ h1{ max-width: 22ch; }
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
     }
-
 
     .card2 .kicker{
       display:inline-flex;
@@ -553,6 +446,11 @@ h1{ max-width: 22ch; }
       box-shadow: var(--card-shadow);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
+      display:flex;
+      flex-wrap:wrap;
+      gap: 14px 18px;
+      align-items:center;
+      justify-content:space-between;
     }
 
     .cta-band .copy{
@@ -568,20 +466,52 @@ h1{ max-width: 22ch; }
       display:flex;
       flex-wrap:wrap;
       gap:10px 18px;
-      align-items:center;
+      align-items:flex-start;
       justify-content:space-between;
+      border-top: 1px solid var(--line);
     }
     .footer a{ color: var(--muted2); }
+
+    .footer-meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px 14px;
+      align-items:center;
+    }
+
+    .footer-legal{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px 12px;
+      align-items:center;
+    }
+
+    .footer-legal a{
+      color: var(--muted2);
+      text-decoration: none;
+    }
+
+    .footer-legal a:hover{
+      text-decoration: underline;
+    }
+
+    .footer-disclaimer{
+      width:100%;
+      margin-top: 8px;
+      font-size: .80rem;
+      color: rgba(255,255,255,.55);
+      line-height: 1.45;
+      max-width: 90ch;
+    }
 
     @media (max-width: 980px){
       .section{ padding: 22px 20px; }
       .grid-3{ grid-template-columns: 1fr; }
       .cta-band{ padding: 20px 20px; }
     }
-
   </style>
-  
-    <!-- Google tag (gtag.js) -->
+
+  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-51LNCTGDYJ"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -605,34 +535,32 @@ h1{ max-width: 22ch; }
     <section class="hero" aria-label="Lakeside Consulting hero">
       <div class="hero-inner">
 
-          <header class="topbar">
-            <a class="brand" href="index.html">
-              <img class="logo" src="assets/lakeside-logo.png" alt="Lakeside logo" />
+        <header class="topbar">
+          <a class="brand" href="index.html" aria-label="Lakeside Consulting home">
+            <img class="logo" src="assets/lakeside-logo.png" alt="Lakeside logo" />
+          </a>
+
+          <nav class="nav" aria-label="Primary navigation">
+            <a href="index.html" aria-current="page">Home</a>
+            <a
+              href="articles/index.html"
+              onclick="trackEvent('select_content', {
+                content_type: 'navigation',
+                item_name: 'Articles'
+              })"
+            >
+              Articles
             </a>
-
-            <nav class="nav" aria-label="Primary navigation">
-              <a href="index.html" aria-current="page">Home</a>
-              <a
-                href="articles/index.html"
-                onclick="trackEvent('select_content', {
-                  content_type: 'navigation',
-                  item_name: 'Articles'
-                })"
-              >
-                Articles
-              </a>
-
-            </nav>
-          </header>
-
-          
+          </nav>
+        </header>
 
         <!-- LEFT -->
         <div class="left">
-<div class="hero-id">
+          <div class="hero-id">
             <div class="hero-name">Lakeside Consulting</div>
             <div class="hero-tagline">Capital &amp; strategic decision support for industrial leaders</div>
           </div>
+
           <h1>Make the decision you won’t regret after the money is spent.</h1>
 
           <p class="subhead">
@@ -671,7 +599,6 @@ h1{ max-width: 22ch; }
           </ul>
 
           <div class="cta-row">
-            <!-- Replace hrefs with your real links -->
             <a
               class="btn btn-primary"
               href="https://calendly.com/lakesideconsult-ing"
@@ -681,20 +608,29 @@ h1{ max-width: 22ch; }
                 currency: 'USD',
                 value: 1,
                 item_name: 'Brief Discussion',
-                item_category: 'Consulting Lead'
+                item_category: 'Consulting Lead',
+                source_page: 'home'
               })"
             >
               Schedule a brief discussion
             </a>
 
-            <a class="btn btn-secondary" href="#decisions">See the types of decisions I support</a>
+            <a
+              class="btn btn-secondary"
+              href="#decisions"
+              onclick="trackEvent('select_content', {
+                content_type: 'navigation',
+                item_name: 'See decisions supported',
+                source_page: 'home'
+              })"
+            >
+              See the types of decisions I support
+            </a>
           </div>
-
         </div>
 
       </div>
     </section>
-
 
     <!-- BELOW HERO -->
     <section class="section" id="for" aria-label="Who this work is for">
@@ -704,7 +640,10 @@ h1{ max-width: 22ch; }
         <li>Industrial firms facing large capital or site decisions</li>
         <li>Technology companies moving from proof to scale</li>
       </ul>
-      <p style="margin-top:12px"><strong style="color:rgba(255,255,255,.92); font-weight:800;">Not for</strong> branding exercises, generic decks, or theoretical strategy.</p>
+      <p style="margin-top:12px">
+        <strong style="color:rgba(255,255,255,.92); font-weight:800;">Not for</strong>
+        branding exercises, generic decks, or theoretical strategy.
+      </p>
     </section>
 
     <section class="section" id="patterns" aria-label="Common early-warning patterns">
@@ -714,7 +653,7 @@ h1{ max-width: 22ch; }
         <li>Capital deployed a year too early — or two years too late</li>
         <li>Acquisitions that made sense on paper but don’t deliver expected results</li>
         <li>Technologies that work in trials, but never scale commercially</li>
-        <li>Markets entered without regulatory or supply‑chain reality baked in</li>
+        <li>Markets entered without regulatory or supply-chain reality baked in</li>
       </ul>
     </section>
 
@@ -733,10 +672,10 @@ h1{ max-width: 22ch; }
 
         <div class="card2" role="listitem">
           <div class="kicker"><span class="dot" aria-hidden="true"></span><span>Step 2</span></div>
-          <h3>Stress‑test the downside</h3>
+          <h3>Stress-test the downside</h3>
           <ul>
             <li>Capital exposure</li>
-            <li>Regulatory and supply‑chain constraints</li>
+            <li>Regulatory and supply-chain constraints</li>
             <li>Competitive responses</li>
           </ul>
         </div>
@@ -759,7 +698,7 @@ h1{ max-width: 22ch; }
         <li>Capital projects totaling <strong style="color:rgba(255,255,255,.92); font-weight:800;">$300M+</strong></li>
         <li>Global integrations across <strong style="color:rgba(255,255,255,.92); font-weight:800;">$1.5B</strong> business units</li>
         <li>Market entry decisions across <strong style="color:rgba(255,255,255,.92); font-weight:800;">12+</strong> industrial sectors</li>
-        <li>IP‑driven growth strategies resulting in <strong style="color:rgba(255,255,255,.92); font-weight:800;">12</strong> issued patents</li>
+        <li>IP-driven growth strategies resulting in <strong style="color:rgba(255,255,255,.92); font-weight:800;">12</strong> issued patents</li>
       </ul>
 
       <div class="grid-3" role="list" aria-label="Engagement types">
@@ -767,7 +706,7 @@ h1{ max-width: 22ch; }
           <div class="kicker"><span class="dot" aria-hidden="true"></span><span>Near-Term</span></div>
           <h3>Decision Support</h3>
           <ul>
-            <li>Short, high‑stakes strategic questions</li>
+            <li>Short, high-stakes strategic questions</li>
             <li>Typically weeks, not months</li>
           </ul>
         </div>
@@ -776,7 +715,7 @@ h1{ max-width: 22ch; }
           <div class="kicker"><span class="dot" aria-hidden="true"></span><span>Mid-Term</span></div>
           <h3>Transaction Readiness</h3>
           <ul>
-            <li>Front‑end diligence and risk framing</li>
+            <li>Front-end diligence and risk framing</li>
             <li>Expedite good deals, not justify ones already decided</li>
           </ul>
         </div>
@@ -786,7 +725,7 @@ h1{ max-width: 22ch; }
           <h3>Fractional Strategy</h3>
           <ul>
             <li>Ongoing guidance during growth or transition</li>
-            <li>Structured, scoped, and decision‑driven</li>
+            <li>Structured, scoped, and decision-driven</li>
           </ul>
         </div>
       </div>
@@ -801,37 +740,73 @@ h1{ max-width: 22ch; }
             href="mailto:info@lakesideconsult.ing"
             onclick="trackEvent('generate_lead', {
               method: 'email',
-              link_text: 'info@lakesideconsult.ing'
+              link_text: 'info@lakesideconsult.ing',
+              source_page: 'home'
             })"
           >
             info@lakesideconsult.ing
           </a>
         </small>
-        <small> </a></small>
-        <small> </a></small>
       </div>
-        <a
-          class="btn btn-primary"
-          href="https://calendly.com/lakesideconsult-ing"
-          target="_blank"
-          rel="noopener noreferrer"
-          onclick="trackEvent('purchase', {
-            currency: 'USD',
-            value: 1,
-            item_name: 'Brief Discussion',
-            item_category: 'Consulting Lead'
-          })"
-        >
-          Schedule a brief discussion
-        </a>
 
+      <a
+        class="btn btn-primary"
+        href="https://calendly.com/lakesideconsult-ing"
+        target="_blank"
+        rel="noopener noreferrer"
+        onclick="trackEvent('purchase', {
+          currency: 'USD',
+          value: 1,
+          item_name: 'Brief Discussion',
+          item_category: 'Consulting Lead',
+          source_page: 'home'
+        })"
+      >
+        Schedule a brief discussion
+      </a>
     </section>
 
     <footer class="footer" aria-label="Site footer">
-      <div>Lakeside Business Consulting LLC</div>
-      <div>© 2026</div>
+      <div class="footer-meta">
+        <div>Lakeside Business Consulting LLC</div>
+
+        <div class="footer-legal" aria-label="Legal links">
+          <a
+            href="privacy.html"
+            onclick="trackEvent('select_content', {
+              content_type: 'navigation',
+              item_name: 'Privacy Policy',
+              source_page: 'home'
+            })"
+          >
+            Privacy Policy
+          </a>
+          <span aria-hidden="true">•</span>
+          <a
+            href="terms.html"
+            onclick="trackEvent('select_content', {
+              content_type: 'navigation',
+              item_name: 'Terms of Use',
+              source_page: 'home'
+            })"
+          >
+            Terms of Use
+          </a>
+        </div>
+
+        <div>© <span id="year"></span></div>
+
+        <div class="footer-disclaimer">
+          Informational only — not project advice. Client relationship only created by written agreement.
+        </div>
+      </div>
     </footer>
 
   </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
+```

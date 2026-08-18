@@ -459,6 +459,58 @@
     .cta-band .copy p{ margin: 0; color: rgba(255,255,255,.86); }
     .cta-band .copy small{ display:block; margin-top: 6px; color: var(--muted2); }
 
+    /* ---------- Download band ---------- */
+    .download-band{
+      margin-top: 14px;
+      padding: 20px 26px;
+      border-radius: var(--card-radius);
+      border: 1px solid var(--card-border);
+      background: var(--card-bg);
+      box-shadow: var(--card-shadow);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      display:flex;
+      flex-wrap:wrap;
+      gap: 14px 18px;
+      align-items:center;
+      justify-content:space-between;
+    }
+
+    .download-band .copy{ max-width: 70ch; }
+
+    .download-band .copy h3{
+      margin: 0 0 6px;
+      font-weight: 800;
+      letter-spacing: -.01em;
+      font-size: 18px;
+      color: rgba(255,255,255,.92);
+      line-height: 1.25;
+    }
+
+    .download-band .copy p{
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .download-band .copy small{
+      display:block;
+      margin-top: 8px;
+      color: var(--muted2);
+      font-size: .82rem;
+    }
+
+    .download-band .btn svg{
+      width: 16px;
+      height: 16px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2.2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      flex: 0 0 auto;
+    }
+
     .footer{
       margin-top: 14px;
       padding: 18px 4px 0;
@@ -729,6 +781,29 @@
           </ul>
         </div>
       </div>
+    </section>
+
+    <section class="download-band" aria-label="Free download">
+      <div class="copy">
+        <h3>Download Ron's Famous EconSheet</h3>
+        <p>No email or login. Just download an Excel Worksheet if you wish.</p>
+        <small>Excel workbook (.xlsx) &middot; Updated <time datetime="2026-08-18">August 18, 2026</time></small>
+      </div>
+
+      <a
+        class="btn btn-secondary"
+        href="files/EconSheet.xlsx?v=2026-08-18"
+        download
+        onclick="trackEvent('file_download', {
+          file_name: 'EconSheet.xlsx',
+          file_extension: 'xlsx',
+          link_text: 'Download the EconSheet',
+          source_page: 'home'
+        })"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0l-4.5-4.5M12 15l4.5-4.5M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+        Download the EconSheet
+      </a>
     </section>
 
     <section class="cta-band" aria-label="Call to action">
